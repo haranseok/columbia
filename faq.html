@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0">
+  <title>columbia</title>
+  <!-- css -->
+  <link rel="stylesheet" href="css/faq.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style type="text/css"></style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="script.js"></script>
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+  <!-- aos -->
+  <link rel="js/stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!--  -->
+
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+  <!-- scrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollTrigger.min.js"></script>
+  <!-- scrollTo -->
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollToPlugin.min.js"></script>
+</head>
+
+<body>
+
+
+  <header>
+
+    <div class="banner">
+      <ul id="rolling">
+        <li> <a href="javascript:void(0)">평생회원되고 point받자! <span>2,000p</span> </a> </li>
+        <li> <a href="javascript:void(0)">spring / summer outlet</a> </li>
+        <li> <a href="javascript:void(0)">
+            20ss new 등산화 <span>newton ridge</span> new 컬러입고!
+          </a> </li>
+      </ul>
+    </div>
+
+    <div class="header_wrap" id="topHeader">
+      <div class="header_wrapper">
+
+          <div class="logo">
+            <a href="index.html"> <img src="images/sub-logo.png" alt="logo"></a>
+          </div>
+
+    <section>
+<nav>
+  <ul>
+    <li> <a href="about.html">about us</a> </li>
+    <li> <a href="product.html">product</a> </li>
+    <li> <a href="order.html">order</a> </li>
+    <li> <a href="qna.html">qna</a> </li>
+    <li> <a href="faq.html">faq</a> </li>
+    <li> <a href="find.html">find</a> </li>
+    <li> <a href="remove.html">remove account</a> </li>
+  </ul>
+</nav>
+        </section>
+
+        <section>
+          <ul>
+            <li><a href="javascript:void(0)" id="searchBtn"> <img src="images/sub-search.svg" alt="search" id="scOpen"><img src="images/sub-closeBtn.svg" alt="close" id="scClose"> </a> </li>
+            <li><a href="login.html">login </a> </li>
+            <li><a href="join.html">join</a> </li>
+            <li><a href="javascript:void(0)" id="cartOpen" class="cartOpen" onclick="openCart()">cart(0)</a> </li>
+
+          </ul>
+        </section>
+
+      </div>
+
+      <div class="search_container">
+        <div class="search_inner">
+
+          <h3>무엇을 찾으시나요?</h3>
+
+          <div class="search_input">
+            <input type="text" placeholder="검색어를 입력해주세요.">
+            <img src="images/icon_search.svg" alt="검색">
+          </div>
+
+      <div class="searchBox">
+        <div class="sl">
+          <h5>최근 검색어</h5>
+          <div class="sl_text">
+            최근 검색어가 없습니다.
+          </div>
+        </div>
+
+        <div class="sr">
+          <h5>인기 검색어</h5>
+          <ul>
+            <li> <strong>1.</strong>등산화 </li>
+            <li> <strong>2.</strong>백팩 </li>
+            <li> <strong>3.</strong>플리스 </li>
+            <li> <strong>4.</strong>바람막이</li>
+            <li> <strong>5.</strong>패딩</li>
+          </ul>
+        </div>
+      </div>
+
+        </div>
+      </div>
+
+<div class="cart_popup" id="cart_popup">
+  <div class="cart-bg"></div>
+    <div class="cart-inner">
+    <span><p>장바구니(0)</p><p id="cartClose" onclick="closeCart()">✕</p></span>
+
+    <div class="cart-untill">
+      <label><input type="checkbox"> <span>전체선택</span> </label>
+      <div class="remove-untill">
+        <button>선택삭제</button>
+        <button>품절삭제</button>
+      </div>
+    </div>
+
+    <div class="cart-list">
+      <p>장바구니에 담긴 상품이 없습니다.</p>
+    </div>
+
+<div class="ship-fee">
+  <dl>
+    <dt>상품금액</dt>
+    <dd>0원</dd>
+  </dl>
+
+  <dl>
+    <dt>상품금액</dt>
+    <dd>0원</dd>
+  </dl>
+
+</div>
+
+<div class="cart-btn">
+  <button>총 0개 0원 주문하기</button>
+  <button>장바구니 자세히보기 〉</button>
+</div>
+
+    </div>
+
+</div>
+
+    </div>
+
+  </header>
+
+  <script>
+  // 스크롤 header 고정
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("topHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+if (window.pageYOffset > sticky) {
+header.classList.add("sticky");
+} else {
+header.classList.remove("sticky");
+}
+}
+
+function openCart() {
+  document.getElementById("cartOpen").style.display = "none";
+  document.getElementById("cart_popup").style.width = "100%";
+}
+
+function closeCart() {
+  document.getElementById("cart_popup").style.width = "0%";
+  document.getElementById("cartOpen").style.display = "block";
+}
+
+  </script>
+
+
+<article class="faq">
+  <div class="faq_inner">
+    <h2>faq</h2>
+    <div class="textBox">
+            고객님들이 가장 많이 문의하는 내용입니다.<br>
+            찾으시는 내용이 없으신 경우 <p>고객센터(1644-6862)</p>또는 1:1문의를 이용해주세요.
+    </div>
+      <div class="tab">
+
+        <div class="inputBox">
+          <input type="text" placeholder="궁금하신 내용을 검색해보세요.">
+          <img src="images/icon_search.svg" alt="">
+        </div>
+          <ul>
+        <li data-id="con1" class="on">회원관련</li>
+        <li data-id="con2">주문관련</li>
+        <li data-id="con3">결제관련</li>
+        <li data-id="con4">배송관련</li>
+        <li data-id="con5">상품관련</li>
+        <li data-id="con6">a/s관련</li>
+        <li data-id="con7">기타</li>
+      </ul>
+
+    <div id="con1" class="conBox on">
+
+    <div id="faq_accordion" class="faq_accordion_container">
+
+    <div class="content-entry">
+      <h4 class="faq-title">Q. 회원 아이디가 기억이 나지 않습니다<i></i></h4>
+      <div class="faq-accordion-content">
+        <p>사이트 상단의 "로그인"을 클릭하시면, "아이디 찾기" 버튼이 보입니다.<br>보인인증을 위한 휴대폰인증 또는 아이핀 인증을 하신 후 고객님의 아이디를 알려드립니다.<br>
+  직접 확인이 어려운 경우 1:1 이메일 상담을 하시거나, 고객센터(tel : 1800-1784)로 문의주시면 본인확인 후 처리해드리도록 하겠습니다. </p>
+      </div>
+    </div>
+
+    <div class="content-entry">
+      <h4 class="faq-title">Q. 패스워드를 잊어 버렸어요. 어떻게 해야 하나요?<i></i> </h4>
+      <div class="faq-accordion-content">
+        <p> 사이트 상단의 "로그인"을 클릭하시면, 로그인 페이지 중간에 "아이디/비밀번호찾기" 버튼이 보입니다.<br>
+    보인인증을 위한 휴대폰인증 또는 아이핀 인증을 하신 후 고객님의 아이디를 알려드립니다.
+      <br>직접 확인이 어려운 경우 1:1 이메일 상담을 하시거나, 고객센터(tel : 1800-1784) 로 문의주시면 본인확인 후  <br>
+    처리해드리도록 하겠습니다. </p>
+      </div>
+    </div>
+
+    <div class="content-entry">
+      <h4 class="faq-title">Q. 비회원 주문내역은 어떻게 보나요? <i></i> </h4>
+      <div class="faq-accordion-content">
+        <p>사이트 상단의 "마이페이지"를 클릭하시고 비회원주문조회 정보(주문자명, 주문번호)를 입력하여 조회하시면 주문내역을 확인하실 수 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="content-entry">
+      <h4 class="faq-title">Q. 회원정보변경 및 회원탈퇴는 어떻게 하나요? <i></i> </h4>
+      <div class="faq-accordion-content">
+        <p>회원정보 변경 및 회원탈퇴는 언제든 하실 수 있으며, 마이페이지의 "회원정보 수정하기" 메뉴에서 하실 수 있습니다. </p>
+      </div>
+    </div>
+
+    </div> <!--faq_accordion_container 01-->
+
+    </div>
+
+
+    <div id="con2" class="conBox">
+
+      <div id="faq_accordion" class="faq_accordion_container">
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 제품 교환 신청은 어떻게 하나요?<i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>교환 처리과정<br>
+    1. 고객센터 (1800-1784) 및 Q&A를 통해 교환 접수.
+      <br>2. 교환신청 확인 후 회수 처리 진행<br>
+  3. 회수 접수일 제외하고 1~2일 안에 택배 기사님이 고객님의 집으로 방문 예정입니다. 상품을 기사님께 전달해 주시기 바랍니다.
+      <br>
+      4. 물류에 도착되면 검수 후 새 상품으로 확인하여 발송. 발송 시 고객님의 등록된 핸드폰번호로 발송 안내 되십니다. <br>
+    (교환까지 7일 정도의 시간이 소요, 맞교환은 어려운 점 양해 부탁 드립니다.)
+  <br><br>
+교환 문의 <br>
+1. 교환은 동일한 상품에서 사이즈와 색상 교환만 가능하시며, 교환할 상품의 재고수량이 없으면 자동으로 환불처리 될 수 있습니다. <br>
+2. 상품교환시에는 왕복 배송비가 발생됩니다 <br>
+3. 교환이나 반품은 구매하신 곳에서만 가능합니다. <br>
+4. 다른 상품으로의 교환은 어렵습니다. 구매하신 상품은 반품하시고 , 원하는 상품으로 재 구매 해주셔야 합니다. 구매하신 상품의 반품은 기존의 반품 절차와 동일합니다.
+ </p>
+        </div>
+      </div>
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 제품 교환/반품 택배 수거는 언제 되나요?<i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>제품 교환/반품 접수 진행하신 주문은 자동으로 수거가 진행 됩니다.<br>
+     택배 회수는 평일 2~3일 소요되며, 방문 전 기사분께서 연락 드리고 있습니다. <br>단, 연휴기간 또는 택배사 사정에 따라 회수가 지연될 수 있습니다.
+    </p>
+        </div>
+      </div>
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 주문 취소 시 환불은 어떻게 되나요?<i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>반품 시, 반품 확인여부를 확인 한 후 3일 이내에 결제금액을 환불해 드립니다.<br>
+<br>
+[신용카드 결제] <br>
+    반품이 확인되는 당일 신용카드 승인취소를 하게 됩니다. 이후 카드사에서 5~7일정도 소요되어 환불이 완료됩니다. <br>
+    환불진행 중 카드대금 결제가 이루어질 경우 금액이 빠져나가고 다음달 대금결제에서 차감됩니다.
+    <br><br>
+    [무통장입금 결제] <br>
+무통장 및 에스크로로 입금하신 경우 환불 받으실 계좌번호를 (1:1문의 게시판, 고객센터) 알려 주시면 다음날 오후5시이전으로 입금됩니다. <br>
+단,계좌번호 확인일이 금요일인 경우 주말이 지난 월요일에 입급됩니다.
+<br><br>
+[계좌이체 결제] <br>
+반품이 확인된 당일 계좌이체 취소요청이 들어갑니다. 해당은행에서 계좌이체를 완료하는데 5~7일정도 소요됩니다. <br>
+해당 처리 기간이 지난 후 이체하셨던 계좌로 입금액이 반환됩니다.  <br><br>
+추가로 궁금한 사항은 컬럼비아스포츠웨어 온라인 공식 스토어 고객센터 :  (1800-1784)으로 문의 주세요.
+ </p>
+        </div>
+      </div>
+
+    </div> <!--faq_accordion_container 02-->
+
+    </div>
+
+
+    <div id="con3" class="conBox">
+
+      <div id="faq_accordion" class="faq_accordion_container">
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 무통장입금(가상계좌)시 입금대기는 언제까지 가능한가요?<i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>무통장 입금(가상계좌)으로 주문 후 가상계좌의 입금 기한(고객 설정)까지 주문은 유효 합니다.최대 2일까지 설정 하실 수 있습니다. <br>
+    *주의 사항주문 건에 맞는 가상계좌 번호로 해당금액을 맞게 입금해주셔야 입금 확인이 되고 있습니다.</p>
+        </div>
+      </div>
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 환불은 언제쯤 확인 가능한가요? <i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>카드결제/계좌이체 건은 반품 보내신 뒤 최대 6일, 무통장 결제 건은 반품 보내신 뒤 대략 일주일정도 소요가 됩니다.  <br>
+    무통장건 같은 경우, 미리 환불계좌[은행명/계좌번호/예금주]를 QnA게시판에 작성 해주셔야 환불처리 진행이 빨라지는 점 유의해주시기 바랍니다.  <br>
+    추가로 궁금한 사항은 컬럼비아스포츠웨어 온라인 공식 스토어 고객센터 :  (1800-1784)으로 문의 주세요. </p>
+        </div>
+      </div>
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 주문취소 시, 사용한 쿠폰은 환급이 되나요? <i></i> </h4>
+        <div class="faq-accordion-content">
+          <p> 모든 쿠폰은 1회성 사용 쿠폰입니다.<br>
+      따라서, 단순 주문취소 및 고객 변심으로 인한 주문취소 시 쿠폰은 환급이 되지 않는 점 유의해주시기 바랍니다.</p>
+        </div>
+      </div>
+
+    </div> <!--faq_accordion_container 03-->
+    </div>
+
+    <div id="con4" class="conBox">
+
+      <div id="faq_accordion" class="faq_accordion_container">
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 해외배송도 되나요?<i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>현재 컬럼비아 온라인 공식 스토어에서는 해외배송이 되지 않고 있습니다. </p>
+        </div>
+      </div>
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 배송지를 변경하고 싶어요<i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>배송 단계 별로 가능 여부가 다를 수 있으니 고객센터 1800-1784로 문의해주세요.</p>
+        </div>
+      </div>
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 배송기간은 얼마나 걸리나요? <i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>평균배송기간은 결제일로부터 영업일 기준으로 3일(토요일,공휴일 제외) 정도 소요되며 재고상황에 따라 다소 지연될 수 있습니다. 도서지역 및 산간지역의 경우 평균배송일 보다 1~2일정도 더 소요될 수 있습니다. (토요일, 공휴일은 제외) 결제수단이 인터넷뱅킹/무통장입금인 경우 입금확인이 된 후 상품발송을 진행하므로 배송 기간이 다소 늦어질 수 있습니다. </p>
+        </div>
+      </div>
+
+    </div> <!--faq_accordion_container 04-->
+
+    </div>
+
+    <div id="con5" class="conBox">
+
+      <div id="faq_accordion" class="faq_accordion_container">
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 등산화 인솔 및 신발 끈 구매가 가능한가요?<i></i> </h4>
+        <div class="faq-accordion-content">
+          <p> 컬럼비아는 별도로 인솔 및 신발 끈을 판매하지 않습니다. <br>
+        개별적으로 구매 하시길 당부 드립니다.</p>
+        </div>
+      </div>
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 지퍼가 오른쪽에 있어요 원래 이런건가요? <i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>컬럼비아는 지퍼 위치로 남-녀 구분을 하지 않으며, 모든 상품들이 오른쪽에 위치해 있습니다. .<br>
+브랜드 정책상 위치 변경 수선은 불가한 점 양해 부탁 드립니다.</p>
+        </div>
+      </div>
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 가죽 등산화도 세탁을 해야 하나요?<i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>가죽 제품의 경우 물세탁을 권장하지 않습니다.<br>
+      물세탁을 할 경우 가죽이 경화되고 갈라짐등 원단 변형을 가져 올 수 있습니다.<br>
+      등산 후 오염이 심한 부분은 솔이나 깨끗한 천으로 물을 살짝 묻혀 겉 표면만 닦아주며, <br>
+    가죽 유연제나 발수처리제를 사용 시 통풍이 잘 되는 그늘에 말려 <br>
+  주는 것이 보다 가죽 관리에 있어 효과적인 방법 입니다.</p>
+        </div>
+      </div>
+
+    </div> <!--faq_accordion_container 04-->
+
+    </div>
+
+
+    <div id="con6" class="conBox">
+
+      <div id="faq_accordion" class="faq_accordion_container">
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 등산화 창갈이는 가능한가요? <i></i> </h4>
+        <div class="faq-accordion-content">
+          <p> 컬럼비아스포츠웨어 등산화는 100%수입제품으로 국내공장과 부품이 없는 관계로 수선이 불가합니다.<br>
+        풋웨어(FOOTWEAR)안전관리 중고차에 최신형 광폭타이어를 장착한것처럼, 신발의 잘못된 창갈이는 발건강까지 해칠 수 있습니다. <br>
+       신발을 오래 신어 내구성이 떨어진 상태에서 새 창을 억지로 부착하게 될 경우 신발 전체적으로 균형이 깨지고, 보행 시 좌, 우 균형이 흐트러집니다.</p>
+        </div>
+      </div>
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 컬럼비아 공식 온라인몰의 피해보상기준을 알고 싶어요<i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>품질보증기간 컬럼비아스포츠웨어 코리아제품의 품질보증기간은 구입일로부터 1년입니다. <br>
+A/S보증기간 내 제품하자가 아닌 고객과실로 인한 수선일 경우 실비 청구됩니다. </p>
+        </div>
+      </div>
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 상품에 오염이 심한 경우 수선 접수가 불가능 한가요?<i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>A. 상품에 오염이 심한 경우 수선접수 및 수선이 불가능 할 수 있습니다.<br>
+      원단덧댐 및 접착등의 수선은 오염으로 인해 수선을 진행 할 수 없는 경우가 발생 될 수 있으며, <br>
+      수선을 진행 시 추 후에 문제가 발생 될 우려가 있기에 오염이 심한 경우에는 세탁 및 오염 제거를 한 후에 <br>A/S 접수를 부탁 드립니다. <br>
+    또한, 세탁으로 제거되지 않는 오염은 수선으로 제거가 어려울 수 있으며, 원단덧댐 및 다른 방법 등으로 <br>수선 가능 여부에 대해서는 실물 확인 후 정확한 답변을 드릴 수 있으니 CS팀에 문의 부탁 드립니다. </p>
+        </div>
+      </div>
+
+    </div> <!--faq_accordion_container 04-->
+
+    </div>
+
+
+    <div id="con7" class="conBox">
+
+      <div id="faq_accordion" class="faq_accordion_container">
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 재 입고 알람 설정 방법<i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>로그인 후 구매 하시려는 상품을 클릭하게 되면  <br>
+        오른쪽 주문금액 하단에 재입고 알림 설정하기를 클릭하여 설정 하시면 됩니다.</p>
+        </div>
+      </div>
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 적립금 적립 안내<i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>0~20% 할인 된 제품은 5% 적립<br>
+    21~30% 할인된 제품은 3% 적립 <br>
+    30% 이상 할인 된 제품은 적립 되지 않습니다. </p>
+        </div>
+      </div>
+
+      <div class="content-entry">
+        <h4 class="faq-title">Q. 상품정보가 잘못되어 있어요. <i></i> </h4>
+        <div class="faq-accordion-content">
+          <p>잘못된 정보로 불편을 드려 죄송합니다.<br>
+      1:1 문의에 잘못된 상품의 정보를 남겨주시면 보다 정확한 확인이 가능합니다.</p>
+        </div>
+      </div>
+
+    </div> <!--faq_accordion_container 04-->
+
+    </div>
+
+      </div>
+    </section>
+  </div>
+</article>
+
+<script>
+
+
+
+//tab
+$(function(){
+    $(".tab ul li").click(function(){
+        $(".tab ul li").removeClass('on');
+        $(".tab .conBox").removeClass('on');
+        $(this).addClass('on');
+        $("#"+$(this).data('id')).addClass('on');
+    });
+});
+
+
+// faq 아코디언
+$(function() {
+		var Accordion = function(el, multiple) {
+				this.el = el || {};
+				this.multiple = multiple || false;
+
+				var links = this.el.find('.faq-title');
+				links.on('click', {
+						el: this.el,
+						multiple: this.multiple
+				}, this.dropdown)
+		}
+
+		Accordion.prototype.dropdown = function(e) {
+				var $el = e.data.el;
+				$this = $(this),
+						$next = $this.next();
+
+				$next.slideToggle();
+				$this.parent().toggleClass('open');
+
+				if (!e.data.multiple) {
+						$el.find('.faq-accordion-content').not($next).slideUp().parent().removeClass('open');
+				};
+		}
+		var accordion = new Accordion($('.faq_accordion_container'), false);
+});
+</script>
+
+    <footer>
+      <div class="fo_top">
+        <ul>
+          <li> <a href="#">개인정보처리방침</a> </li>
+          <li> <a href="#">이용약관</a> </li>
+          <li> <a href="#">about columbia store</a> </li>
+          <li> <a href="#">store</a> </li>
+        </ul>
+
+        <ul>
+          <li> <a href="#"> <img src="https://www.kappa.co.kr/web/images/ico_sns_insta_b.svg" alt=""> </a> </li>
+          <li> <a href="#">
+              <img src="https://www.kappa.co.kr/web/images/ico_sns_kakaoch_b.svg" alt=""> </a> </li>
+          <li> <a href="#">
+              <img src="https://www.kappa.co.kr/web/images/ico_sns_facebook.svg" alt=""> </a> </li>
+        </ul>
+      </div>
+
+      <div class="fo_bottom">
+
+        <div class="f_left">
+          <div>
+            <strong>회사소개 +</strong>
+            <p> 컬럼비아스포츠웨어코리아 대표이사 : 배정원 <br>
+              서울특별시 동대문구 천호대로 429, 7~10층 <br>
+              사업자등록번호 : 120-81-63458 <br>
+              통신판매신고번호 : 2013-서울동대문-0848 <br>
+              개인정보 보호책임자 : 전기석 </p>
+          </div>
+
+          <div>
+            <strong>고객센터 +</strong>
+
+            <div>
+              <p>컬럼비아 대표번호 <span>매장고객 및 AS문의</span> </p>
+              <h4>080-540-0277</h4>
+              <small>평일 09:30~17:30</small>
+            </div>
+
+            <div>
+              <p>온라인 스토어 고객센터 <span>온라인몰 고객 문의</span> </p>
+              <h4>1800-1784</h4>
+              <small>평일 10:00~17:00</small>
+            </div>
+
+          </div>
+
+        </div>
+
+        <button>International Site</button>
+      </div>
+    </footer>
+
+    <div id="top_btn">
+    <div>
+      top
+    </div>
+  </div>
+
+
+    <script>
+    // top으로 이동
+    $(window).scroll(function() {
+
+      if ($(this).scrollTop() > 100) {
+        $("#top_btn").addClass("on");
+      } else {
+        $("#top_btn").removeClass("on");
+      }
+
+    });
+
+    $("#top_btn").click(function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+
+
+      AOS.init({
+        offset: 200,
+        duration: 800,
+        easing: 'linear',
+        delay: 10,
+      });
+    </script>
+
+  </body>
+
+  </html>

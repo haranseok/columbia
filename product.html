@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0">
+  <title>columbia</title>
+  <!-- css -->
+  <link rel="stylesheet" href="css/product.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style type="text/css"></style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="script.js"></script>
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+  <!-- aos -->
+  <link rel="js/stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!--  -->
+
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+  <!-- scrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollTrigger.min.js"></script>
+  <!-- scrollTo -->
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollToPlugin.min.js"></script>
+</head>
+
+<body>
+
+
+  <header>
+
+    <div class="banner">
+      <ul id="rolling">
+        <li> <a href="javascript:void(0)">평생회원되고 point받자! <span>2,000p</span> </a> </li>
+        <li> <a href="javascript:void(0)">spring / summer outlet</a> </li>
+        <li> <a href="javascript:void(0)">
+            20ss new 등산화 <span>newton ridge</span> new 컬러입고!
+          </a> </li>
+      </ul>
+    </div>
+
+    <div class="header_wrap" id="topHeader">
+      <div class="header_wrapper">
+
+          <div class="logo">
+            <a href="index.html"> <img src="images/sub-logo.png" alt="logo"></a>
+          </div>
+
+    <section>
+<nav>
+  <ul>
+    <li> <a href="about.html">about us</a> </li>
+    <li> <a href="product.html">product</a> </li>
+    <li> <a href="order.html">order</a> </li>
+    <li> <a href="qna.html">qna</a> </li>
+    <li> <a href="faq.html">faq</a> </li>
+    <li> <a href="find.html">find</a> </li>
+    <li> <a href="remove.html">remove account</a> </li>
+  </ul>
+</nav>
+        </section>
+
+        <section>
+          <ul>
+            <li><a href="javascript:void(0)" id="searchBtn"> <img src="images/sub-search.svg" alt="search" id="scOpen"><img src="images/sub-closeBtn.svg" alt="close" id="scClose"> </a> </li>
+            <li><a href="login.html">login </a> </li>
+            <li><a href="join.html">join</a> </li>
+            <li><a href="javascript:void(0)" id="cartOpen" class="cartOpen" onclick="openCart()">cart(0)</a> </li>
+
+          </ul>
+        </section>
+
+      </div>
+
+      <div class="search_container">
+        <div class="search_inner">
+
+          <h3>무엇을 찾으시나요?</h3>
+
+          <div class="search_input">
+            <input type="text" placeholder="검색어를 입력해주세요.">
+            <img src="images/icon_search.svg" alt="검색">
+          </div>
+
+      <div class="searchBox">
+        <div class="sl">
+          <h5>최근 검색어</h5>
+          <div class="sl_text">
+            최근 검색어가 없습니다.
+          </div>
+        </div>
+
+        <div class="sr">
+          <h5>인기 검색어</h5>
+          <ul>
+            <li> <strong>1.</strong>등산화 </li>
+            <li> <strong>2.</strong>백팩 </li>
+            <li> <strong>3.</strong>플리스 </li>
+            <li> <strong>4.</strong>바람막이</li>
+            <li> <strong>5.</strong>패딩</li>
+          </ul>
+        </div>
+      </div>
+
+        </div>
+      </div>
+
+<div class="cart_popup" id="cart_popup">
+  <div class="cart-bg"></div>
+    <div class="cart-inner">
+    <span><p>장바구니(0)</p><p id="cartClose" onclick="closeCart()">✕</p></span>
+
+    <div class="cart-untill">
+      <label><input type="checkbox"> <span>전체선택</span> </label>
+      <div class="remove-untill">
+        <button>선택삭제</button>
+        <button>품절삭제</button>
+      </div>
+    </div>
+
+    <div class="cart-list">
+      <p>장바구니에 담긴 상품이 없습니다.</p>
+    </div>
+
+<div class="ship-fee">
+  <dl>
+    <dt>상품금액</dt>
+    <dd>0원</dd>
+  </dl>
+
+  <dl>
+    <dt>상품금액</dt>
+    <dd>0원</dd>
+  </dl>
+
+</div>
+
+<div class="cart-btn">
+  <button>총 0개 0원 주문하기</button>
+  <button>장바구니 자세히보기 〉</button>
+</div>
+
+    </div>
+
+</div>
+
+    </div>
+
+  </header>
+
+  <script>
+  // 스크롤 header 고정
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("topHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+if (window.pageYOffset > sticky) {
+header.classList.add("sticky");
+} else {
+header.classList.remove("sticky");
+}
+}
+
+function openCart() {
+  document.getElementById("cartOpen").style.display = "none";
+  document.getElementById("cart_popup").style.width = "100%";
+}
+
+function closeCart() {
+  document.getElementById("cart_popup").style.width = "0%";
+  document.getElementById("cartOpen").style.display = "block";
+}
+
+  </script>
+
+
+
+
+<article class="product">
+
+  <h2>product</h2>
+  <div class="product_inner">
+
+<div class="product_container">
+  <div class="swiper productSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"> <img src="images/product01.jpg" alt=""> </div>
+      <div class="swiper-slide"> <img src="images/product02.jpg" alt=""> </div>
+      <div class="swiper-slide"> <img src="images/product03.jpg" alt=""> </div>
+      <div class="swiper-slide"> <img src="images/product04.jpg" alt=""> </div>
+      <div class="swiper-slide"> <img src="images/product05.jpg" alt=""> </div>
+      <div class="swiper-slide"> <img src="images/product06.jpg" alt=""> </div>
+      <div class="swiper-slide"> <img src="images/product07.jpg" alt=""> </div>
+      <div class="swiper-slide"> <img src="images/product08.jpg" alt=""> </div>
+      <div class="swiper-slide"> <img src="images/product09.jpg" alt=""> </div>
+    </div>
+  </div>
+  <div id="pro" class="swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal"></div>
+
+</div> <!--product_container end-->
+
+  <div class="pro_right">
+    <div class="right-top">
+    <h4>C35BK4552008</h4>
+
+<div>
+  <strong>뉴튼릿지 플러스 WP AMPED WIDE</strong>
+  <div class="icon">
+  <span> <img src="images/heart.svg" alt=""> </span><span><img src="images/share.svg" alt=""></span>
+  </div>
+</div>
+
+    <p>NEWTON RIDGE™ PLUS WATERPROOF AMPED WIDE</p>
+    <p><span>125,100원</span>  <span>139,000원</span> </p>
+    <small>신규회원 할인받기</small>
+    </div>
+
+<div class="tab">
+<div>
+  <p>컬러 선택:</p>
+  <div id="con1" class="conBox on">
+    sunset red
+</div>
+<div id="con2" class="conBox">
+  light lichen
+</div>
+<div id="con3" class="conBox">
+  phlox
+</div>
+<div id="con4" class="conBox">
+  elk
+</div>
+</div>
+
+<ul>
+  <li data-id="con1" class="on"><img src="images/pro-1.jpg" alt="">
+</li>
+  <li data-id="con2">  <img src="images/pro-2.jpg" alt="">
+</li>
+  <li data-id="con3">  <img src="images/pro-3.jpg" alt="">
+</li>
+  <li data-id="con4">  <img src="images/pro-4.jpg" alt="">
+</li>
+</ul>
+
+
+</div>
+
+<div class="tab_2">
+  <div>
+    <p>사이즈선택</p>
+
+      <div id="con5" class="conBox on1">
+    230mm
+    </div>
+    <div id="con6" class="conBox">
+    240mm</div>
+    <div id="con7" class="conBox">
+    250mm</div>
+    <div id="con8" class="conBox">
+    260mm</div>
+    <div id="con9" class="conBox">
+    270mm</div>
+    <div id="con10" class="conBox">
+    280mm</div>
+  </div>
+
+
+<ul>
+  <li data-id="con5" class="on1">230mm</li>
+  <li data-id="con6">240mm</li>
+  <li data-id="con7">250mm</li>
+  <li data-id="con8">260mm</li>
+  <li data-id="con9">270mm</li>
+  <li data-id="con10">280mm</li>
+</ul>
+
+</div>
+
+<button><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" class="svg-inline fit-widget-icon-shoes">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20.4121 6.41206C20.2638 6.19611 19.9739 6.13125 19.7477 6.26338L19.9999 6.69512L19.7477 6.2634L19.7476 6.26346L19.7472 6.26372L19.7453 6.26482L19.7377 6.26926L19.7074 6.28691L19.5897 6.35525C19.4871 6.41477 19.3376 6.50119 19.1507 6.60861C18.7768 6.82346 18.2533 7.12215 17.6551 7.45734C16.4565 8.12902 14.9666 8.94249 13.7803 9.52262C12.0679 10.36 10.1129 11.0033 8.33889 11.5871C8.17374 11.6415 8.01016 11.6953 7.84848 11.7487C6.90753 12.0596 6.02637 12.3586 5.29681 12.6632C4.5816 12.9619 3.94693 13.2914 3.54765 13.6878L3.54761 13.6879C3.41742 13.8172 3.34304 13.9845 3.2971 14.1149C3.24708 14.2569 3.20994 14.4173 3.18208 14.5807C3.12618 14.9086 3.09998 15.2946 3.09998 15.6686C3.09998 16.042 3.12612 16.4235 3.18271 16.7413C3.21084 16.8993 3.24903 17.0563 3.30224 17.1942C3.34896 17.3153 3.43485 17.497 3.60131 17.621L3.62304 17.6371L3.64638 17.6509C6.43222 19.29 10.169 20.0036 11.8999 20.0036C12.7264 20.0036 17.077 20.0036 21.3712 19.9912C25.6451 19.9789 29.9149 19.9545 30.5412 19.9026L30.5615 19.901L30.5816 19.8976C31.3539 19.7698 31.9149 19.2905 32.2718 18.7294C32.6251 18.174 32.7999 17.5092 32.7999 16.9221C32.7999 16.3843 32.5685 14.3333 32.3206 12.4628C32.1953 11.5171 32.0632 10.5987 31.9494 9.91451C31.8928 9.57385 31.8394 9.28348 31.7925 9.07475C31.7696 8.9729 31.7451 8.87597 31.7188 8.79847C31.7068 8.76302 31.6867 8.70799 31.6558 8.65344C31.6412 8.62756 31.6107 8.57739 31.5598 8.52756C31.5147 8.48332 31.3919 8.37952 31.1999 8.37952H31.197H31.194H31.1911H31.1881H31.1851H31.1821H31.179H31.176H31.1729H31.1699H31.1668H31.1637H31.1605H31.1574H31.1542H31.1511H31.1479H31.1447H31.1415H31.1382H31.135H31.1317H31.1284H31.1252H31.1219H31.1185H31.1152H31.1119H31.1085H31.1051H31.1017H31.0983H31.0949H31.0915H31.088H31.0846H31.0811H31.0776H31.0741H31.0706H31.0671H31.0635H31.06H31.0564H31.0528H31.0492H31.0456H31.042H31.0384H31.0347H31.0311H31.0274H31.0237H31.02H31.0163H31.0126H31.0089H31.0051H31.0013H30.9976H30.9938H30.99H30.9862H30.9824H30.9785H30.9747H30.9708H30.967H30.9631H30.9592H30.9553H30.9514H30.9474H30.9435H30.9396H30.9356H30.9316H30.9276H30.9236H30.9196H30.9156H30.9116H30.9076H30.9035H30.8994H30.8954H30.8913H30.8872H30.8831H30.879H30.8749H30.8707H30.8666H30.8624H30.8583H30.8541H30.8499H30.8457H30.8415H30.8373H30.8331H30.8288H30.8246H30.8203H30.8161H30.8118H30.8075H30.8032H30.7989H30.7946H30.7903H30.786H30.7816H30.7773H30.7729H30.7686H30.7642H30.7598H30.7554H30.751H30.7466H30.7422H30.7378H30.7334H30.7289H30.7245H30.72H30.7156H30.7111H30.7066H30.7021H30.6976H30.6931H30.6886H30.6841H30.6796H30.675H30.6705H30.666H30.6614H30.6568H30.6523H30.6477H30.6431H30.6385H30.6339H30.6293H30.6247H30.6201H30.6154H30.6108H30.6062H30.6015H30.5969H30.5922H30.5876H30.5829H30.5782H30.5735H30.5688H30.5641H30.5594H30.5547H30.55H30.5453H30.5406H30.5359H30.5311H30.5264H30.5216H30.5169H30.5121H30.5074H30.5026H30.4978H30.493H30.4883H30.4835H30.4787H30.4739H30.4691H30.4643H30.4595H30.4546H30.4498H30.445H30.4402H30.4353H30.4305H30.4257H30.4208H30.416H30.4111H30.4062H30.4014H30.3965H30.3916H30.3868H30.3819H30.377H30.3721H30.3672H30.3624H30.3575H30.3526H30.3477H30.3428H30.3379H30.3329H30.328H30.3231H30.3182H30.3133H30.3083H30.3034H30.2985H30.2936H30.2886H30.2837H30.2788H30.2738H30.2689H30.2639H30.259H30.254H30.2491H30.2441H30.2392H30.2342H30.2292H30.2243H30.2193H30.2144H30.2094H30.2044H30.1995H30.1945H30.1895H30.1846H30.1796H30.1746H30.1696H30.1647H30.1597H30.1547H30.1497H30.1448H30.1398H30.1348H30.1298H30.1248H30.1199H30.1149H30.1099H30.1049H30.0999H30.095H30.09H30.085H30.08H30.075H30.0701H30.0651H30.0601H30.0551H30.0501H30.0452H30.0402H30.0352H30.0302H30.0253H30.0203H30.0153H30.0104H30.0054H30.0004H29.9954H29.9905H29.9855H29.9806H29.9756H29.9706H29.9657H29.9607H29.9558H29.9508H29.9459H29.9409H29.936H29.931H29.9261H29.9211H29.9162H29.9113H29.9063H29.9014H29.8965H29.8915H29.8866H29.8817H29.8768H29.8719H29.8669H29.862H29.8571H29.8522H29.8473H29.8424H29.8375H29.8326H29.8278H29.8229H29.818H29.8131H29.8082H29.8034H29.7985H29.7936H29.7888H29.7839H29.7791H29.7742H29.7694H29.7645H29.7597H29.7549H29.7501H29.7452H29.7404H29.7356H29.7308H29.726H29.7212H29.7164H29.7116H29.7068H29.7021H29.6973H29.6925H29.6878H29.683H29.6783H29.6735H29.6688H29.664H29.6593H29.6546H29.6499H29.6451H29.6404H29.6357H29.631H29.6264H29.6217H29.617H29.6123H29.6077H29.603H29.5984H29.5937H29.5891H29.5844H29.5798H29.5752H29.5706H29.566H29.5614H29.5568H29.5522H29.5476H29.5431H29.5385H29.5339H29.5294H29.5248H29.5203H29.5158H29.5113H29.5068H29.5023H29.4978H29.4933H29.4888H29.4843H29.4799H29.4754H29.4709H29.4665H29.4621H29.4577H29.4532H29.4488H29.4444H29.4401H29.4357H29.4313H29.4269H29.4226H29.4182H29.4139H29.4096H29.4053H29.4009H29.3966H29.3924H29.3881H29.3838H29.3795H29.3753H29.371H29.3668H29.3626H29.3584H29.3542H29.35H29.3458H29.3416H29.3375H29.3333H29.3292H29.325H29.3209H29.3168H29.3127H29.3086H29.3045H29.3004H29.2964H29.2923H29.2883H29.2843H29.2802H29.2762H29.2722H29.2683H29.2643H29.2603H29.2564H29.2524H29.2485H29.2446H29.2407H29.2368H29.2329H29.2291H29.2252H29.2214H29.2175H29.2137H29.2099H29.2061H29.2023H29.1985H29.1948H29.191H29.1873H29.1836H29.1799H29.1762H29.1725H29.1688H29.1651H29.1615H29.1579H29.1542H29.1506H29.147H29.1435H29.1399H29.1363H29.1328H29.1293H29.1258H29.1223H29.1188H29.1153H29.1118H29.1084H29.105H29.1016H29.0981H29.0948H29.0914H29.088H29.0847H29.0813H29.078H29.0747H29.0714H29.0682H29.0649H29.0617H29.0584H29.0552H29.052H29.0488H29.0457H29.0425H29.0394H29.0362H29.0331H29.03H29.0269H29.0239H29.0208H29.0178H29.0148H29.0118H29.0088H29.0058H29.0029H28.9999C28.5626 8.37952 28.3365 8.74457 28.2453 8.91463C28.1324 9.12503 28.0413 9.39452 27.9634 9.62642L27.948 9.6724C27.8699 9.90533 27.7977 10.1208 27.7135 10.3098C27.6205 10.5185 27.54 10.63 27.4812 10.6787C27.4831 10.6771 27.4829 10.6772 27.4799 10.6788C27.4695 10.6843 27.4246 10.7079 27.3206 10.736C27.2001 10.7685 27.0402 10.7967 26.8461 10.8183C26.4589 10.8615 25.98 10.874 25.5 10.8619C25.0209 10.8499 24.5558 10.8138 24.1984 10.7641C24.0186 10.7392 23.8764 10.7122 23.7775 10.6862C23.7537 10.6799 23.7346 10.6743 23.7197 10.6695C22.8035 9.61165 21.9833 8.55729 21.3879 7.76095C21.0842 7.35482 20.8396 7.0166 20.6711 6.78033C20.5869 6.66221 20.5218 6.56962 20.4779 6.50682L20.4283 6.4355L20.4159 6.4176L20.4129 6.41327L20.4123 6.41228L20.4121 6.41208L20.4121 6.41206ZM23.6784 10.6541C23.6785 10.654 23.6802 10.6548 23.6834 10.6565C23.6799 10.6549 23.6784 10.6541 23.6784 10.6541ZM19.8544 7.35735L19.6489 7.47565C19.2727 7.69186 18.746 7.99238 18.144 8.32971C17.7532 8.54871 17.3298 8.78373 16.8945 9.02159L20.2986 11.5565L19.7013 12.3586L15.9238 9.54554C15.5941 9.72109 15.2663 9.8928 14.9492 10.0552L18.2986 12.5494L17.7013 13.3515L13.9438 10.5533C13.6035 10.7136 13.2555 10.8668 12.9031 11.0138L16.2986 13.5423L15.7013 14.3444L11.8099 11.4465C10.7375 11.8509 9.65692 12.2063 8.65892 12.5346L8.65891 12.5346L8.65887 12.5346L8.65884 12.5346L8.65883 12.5346L8.65825 12.5348C8.49043 12.59 8.32495 12.6444 8.16224 12.6982C7.21805 13.0102 6.37151 13.2982 5.68214 13.586C5.16381 13.8025 4.76931 14.0052 4.49724 14.1965C4.52491 14.216 4.55672 14.2376 4.5929 14.2611C4.79153 14.3904 5.12275 14.5777 5.62666 14.7837C6.63486 15.1959 8.33476 15.683 11.0449 15.9276C13.7631 16.173 17.8871 16.1986 21.8831 15.9637C25.7389 15.7371 29.408 15.2714 31.5744 14.5543C31.5021 13.9382 31.4178 13.262 31.3293 12.5941C31.2046 11.6533 31.0742 10.7472 30.963 10.0786C30.9154 9.7923 30.8722 9.55518 30.8353 9.37952H30.8331H30.8288H30.8246H30.8203H30.8161H30.8118H30.8075H30.8032H30.7989H30.7946H30.7903H30.786H30.7816H30.7773H30.7729H30.7686H30.7642H30.7598H30.7554H30.751H30.7466H30.7422H30.7378H30.7334H30.7289H30.7245H30.72H30.7156H30.7111H30.7066H30.7021H30.6976H30.6931H30.6886H30.6841H30.6796H30.675H30.6705H30.666H30.6614H30.6568H30.6523H30.6477H30.6431H30.6385H30.6339H30.6293H30.6247H30.6201H30.6154H30.6108H30.6062H30.6015H30.5969H30.5922H30.5876H30.5829H30.5782H30.5735H30.5688H30.5641H30.5594H30.5547H30.55H30.5453H30.5406H30.5359H30.5311H30.5264H30.5216H30.5169H30.5121H30.5074H30.5026H30.4978H30.493H30.4883H30.4835H30.4787H30.4739H30.4691H30.4643H30.4595H30.4546H30.4498H30.445H30.4402H30.4353H30.4305H30.4257H30.4208H30.416H30.4111H30.4062H30.4014H30.3965H30.3916H30.3868H30.3819H30.377H30.3721H30.3672H30.3624H30.3575H30.3526H30.3477H30.3428H30.3379H30.3329H30.328H30.3231H30.3182H30.3133H30.3083H30.3034H30.2985H30.2936H30.2886H30.2837H30.2788H30.2738H30.2689H30.2639H30.259H30.254H30.2491H30.2441H30.2392H30.2342H30.2292H30.2243H30.2193H30.2144H30.2094H30.2044H30.1995H30.1945H30.1895H30.1846H30.1796H30.1746H30.1696H30.1647H30.1597H30.1547H30.1497H30.1448H30.1398H30.1348H30.1298H30.1248H30.1199H30.1149H30.1099H30.1049H30.0999H30.095H30.09H30.085H30.08H30.075H30.0701H30.0651H30.0601H30.0551H30.0501H30.0452H30.0402H30.0352H30.0302H30.0253H30.0203H30.0153H30.0104H30.0054H30.0004H29.9954H29.9905H29.9855H29.9806H29.9756H29.9706H29.9657H29.9607H29.9558H29.9508H29.9459H29.9409H29.936H29.931H29.9261H29.9211H29.9162H29.9113H29.9063H29.9014H29.8965H29.8915H29.8866H29.8817H29.8768H29.8719H29.8669H29.862H29.8571H29.8522H29.8473H29.8424H29.8375H29.8326H29.8278H29.8229H29.818H29.8131H29.8082H29.8034H29.7985H29.7936H29.7888H29.7839H29.7791H29.7742H29.7694H29.7645H29.7597H29.7549H29.7501H29.7452H29.7404H29.7356H29.7308H29.726H29.7212H29.7164H29.7116H29.7068H29.7021H29.6973H29.6925H29.6878H29.683H29.6783H29.6735H29.6688H29.664H29.6593H29.6546H29.6499H29.6451H29.6404H29.6357H29.631H29.6264H29.6217H29.617H29.6123H29.6077H29.603H29.5984H29.5937H29.5891H29.5844H29.5798H29.5752H29.5706H29.566H29.5614H29.5568H29.5522H29.5476H29.5431H29.5385H29.5339H29.5294H29.5248H29.5203H29.5158H29.5113H29.5068H29.5023H29.4978H29.4933H29.4888H29.4843H29.4799H29.4754H29.4709H29.4665H29.4621H29.4577H29.4532H29.4488H29.4444H29.4401H29.4357H29.4313H29.4269H29.4226H29.4182H29.4139H29.4096H29.4053H29.4009H29.3966H29.3924H29.3881H29.3838H29.3795H29.3753H29.371H29.3668H29.3626H29.3584H29.3542H29.35H29.3458H29.3416H29.3375H29.3333H29.3292H29.325H29.3209H29.3168H29.3127H29.3086H29.3045H29.3004H29.2964H29.2923H29.2883H29.2843H29.2802H29.2762H29.2722H29.2683H29.2643H29.2603H29.2564H29.2524H29.2485H29.2446H29.2407H29.2368H29.2329H29.2291H29.2252H29.2214H29.2175H29.2137H29.2099H29.2061H29.2023H29.1985H29.1948H29.191H29.1873H29.1836H29.1799H29.1762H29.1725H29.1688H29.1651H29.1615H29.1579H29.1542H29.1506H29.147H29.1435H29.1399H29.1363H29.1328H29.1307L29.1265 9.3874C29.0612 9.509 28.9961 9.69253 28.9114 9.94467L28.8928 10.0002C28.8185 10.2222 28.7316 10.4817 28.627 10.7166C28.5168 10.964 28.3599 11.2496 28.1187 11.4491C27.9599 11.5805 27.7557 11.6543 27.5812 11.7014C27.3943 11.7519 27.18 11.7873 26.9569 11.8122C26.5098 11.862 25.9824 11.8744 25.4749 11.8616C24.9665 11.8488 24.4629 11.8105 24.0608 11.7546C23.861 11.7269 23.6758 11.6934 23.5236 11.6534C23.4478 11.6335 23.3704 11.6095 23.2991 11.5797C23.2381 11.5541 23.1355 11.5059 23.0476 11.4187L23.0347 11.4058L23.0227 11.3921C22.0621 10.2877 21.2041 9.18512 20.587 8.35979C20.2782 7.94677 20.0291 7.60236 19.8569 7.36079L19.8544 7.35735ZM4.09998 15.6686C4.09997 15.4893 4.10685 15.3117 4.12006 15.1456C4.37371 15.3042 4.74022 15.5017 5.24822 15.7094C6.36502 16.1659 8.16513 16.6718 10.955 16.9236C13.7368 17.1747 17.9128 17.1988 21.9418 16.962C25.6845 16.742 29.3638 16.2938 31.6879 15.5681C31.7573 16.2242 31.7999 16.721 31.7999 16.9221C31.7999 17.3278 31.6747 17.8049 31.4281 18.1927C31.1887 18.569 30.8564 18.832 30.4381 18.9076C29.7907 18.9541 25.6329 18.9789 21.3683 18.9912C17.0757 19.0036 12.7263 19.0036 11.8999 19.0036C10.3418 19.0036 6.84237 18.3413 4.2364 16.8373L4.23518 16.8342C4.2134 16.7778 4.1891 16.6889 4.16723 16.5661C4.12384 16.3223 4.09998 16.0025 4.09998 15.6686ZM29.1741 9.31338C29.1742 9.3139 29.1714 9.31767 29.1656 9.32319C29.1712 9.31563 29.1741 9.31287 29.1741 9.31338ZM4.25365 16.8747C4.25363 16.8748 4.25301 16.8738 4.25185 16.8717L4.25365 16.8747Z"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.375 26L4.6 25.7L7.6 21.7L8.4 22.3L6 25.5L30 25.5L27.6 22.3L28.4 21.7L31.4 25.7L31.625 26L31.4 26.3L28.4 30.3L27.6 29.7L30 26.5L6 26.5L8.4 29.7L7.6 30.3L4.6 26.3L4.375 26Z"></path>
+</svg> <p>고객님 사이즈를 찾아보세요!</p> </button>
+
+<div class="right-bottom">
+  <p>수량선택</p>
+  <div class="input_box">
+
+<input type='button'
+       onclick='countDown2()'
+       value='−'/>
+              <div id="count">0</div>
+       <input type='button'
+            onclick="countUp();"
+            value='+'/>
+</div>
+
+<div>
+  <ul>
+    <li>상품코드</li>
+    <li>배송비</li>
+<li>카드혜택</li>
+  </ul>
+  <ul>
+    <li>C35BK4552008</li>
+    <li>3000원 / 3만원이상 무료배송</li>
+  <li>무이자 할부안내</li>
+  </ul>
+</div>
+
+<div class="btn">
+<button>선물하기</button>
+<button>장바구니</button>
+</div>
+
+<button>바로구매</button>
+
+</div>
+
+  </div>
+
+  </div>
+</article>
+
+<script>
+  var swiper = new Swiper(".productSwiper", {
+    direction: "vertical",
+    slidesPerView: 1,
+    spaceBetween: 30,
+    mousewheel: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+  });
+
+
+  $(function(){
+      $(".tab ul li").click(function(){
+          $(".tab ul li").removeClass('on');
+          $(".tab .conBox").removeClass('on');
+          $(this).addClass('on');
+          $("#"+$(this).data('id')).addClass('on');
+      });
+  });
+
+
+  $(function(){
+      $(".tab_2 ul li").click(function(){
+          $(".tab_2 ul li").removeClass('on1');
+          $(".tab_2 .conBox").removeClass('on1');
+          $(this).addClass('on1');
+          $("#"+$(this).data('id')).addClass('on1');
+      });
+  });
+
+
+  var count=0;
+
+        //1.카운트 올리기
+        var countUp=function(){
+            count=count+1;
+            document.querySelector("#count").innerText=count;
+        };
+
+        //3.0까지만 내리기 ver.1
+        var countDown2=function(){
+            if(count>0){
+                count=count-1;
+                document.querySelector("#count").innerText=count;
+            }
+        };
+</script>
+
+
+<article class="product_1">
+  <div class="product_1_inner">
+    <img src="images/product01.jpg" alt="">
+    <img src="images/product02.jpg" alt="">
+    <img src="images/product03.jpg" alt="">
+    <img src="images/product04.jpg" alt="">
+    <img src="images/product05.jpg" alt="">
+  </div>
+</article>
+
+    <footer>
+      <div class="fo_top">
+        <ul>
+          <li> <a href="#">개인정보처리방침</a> </li>
+          <li> <a href="#">이용약관</a> </li>
+          <li> <a href="#">about columbia store</a> </li>
+          <li> <a href="#">store</a> </li>
+        </ul>
+
+        <ul>
+          <li> <a href="#"> <img src="https://www.kappa.co.kr/web/images/ico_sns_insta_b.svg" alt=""> </a> </li>
+          <li> <a href="#">
+              <img src="https://www.kappa.co.kr/web/images/ico_sns_kakaoch_b.svg" alt=""> </a> </li>
+          <li> <a href="#">
+              <img src="https://www.kappa.co.kr/web/images/ico_sns_facebook.svg" alt=""> </a> </li>
+        </ul>
+      </div>
+
+      <div class="fo_bottom">
+
+        <div class="f_left">
+          <div>
+            <strong>회사소개 +</strong>
+            <p> 컬럼비아스포츠웨어코리아 대표이사 : 배정원 <br>
+              서울특별시 동대문구 천호대로 429, 7~10층 <br>
+              사업자등록번호 : 120-81-63458 <br>
+              통신판매신고번호 : 2013-서울동대문-0848 <br>
+              개인정보 보호책임자 : 전기석 </p>
+          </div>
+
+          <div>
+            <strong>고객센터 +</strong>
+
+            <div>
+              <p>컬럼비아 대표번호 <span>매장고객 및 AS문의</span> </p>
+              <h4>080-540-0277</h4>
+              <small>평일 09:30~17:30</small>
+            </div>
+
+            <div>
+              <p>온라인 스토어 고객센터 <span>온라인몰 고객 문의</span> </p>
+              <h4>1800-1784</h4>
+              <small>평일 10:00~17:00</small>
+            </div>
+
+          </div>
+
+        </div>
+
+        <button>International Site</button>
+      </div>
+    </footer>
+
+    <div id="top_btn">
+    <div>
+      top
+    </div>
+  </div>
+
+
+    <script>
+    // top으로 이동
+    $(window).scroll(function() {
+
+      if ($(this).scrollTop() > 100) {
+        $("#top_btn").addClass("on");
+      } else {
+        $("#top_btn").removeClass("on");
+      }
+
+    });
+
+    $("#top_btn").click(function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+
+
+      AOS.init({
+        offset: 200,
+        duration: 800,
+        easing: 'linear',
+        delay: 10,
+      });
+    </script>
+
+  </body>
+
+  </html>

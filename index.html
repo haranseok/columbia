@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0">
+  <title>columbia</title>
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style type="text/css"></style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="script.js"></script>
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+  <!-- aos -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+  <!-- scrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollTrigger.min.js"></script>
+  <!-- scrollTo -->
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollToPlugin.min.js"></script>
+</head>
+
+<body>
+
+
+  <header>
+
+    <div class="banner">
+      <ul id="rolling">
+        <li> <a href="javascript:void(0)">평생회원되고 point받자! <span>2,000p</span> </a> </li>
+        <li> <a href="javascript:void(0)">spring / summer outlet</a> </li>
+        <li> <a href="javascript:void(0)">
+            20ss new 등산화 <span>newton ridge</span> new 컬러입고!
+          </a> </li>
+      </ul>
+    </div>
+
+    <div class="header_wrap">
+      <div class="header_wrapper">
+
+          <div class="logo">
+            <a href="javascript:void(0)"> <img src="images/logo.png" alt="logo"></a>
+          </div>
+
+    <section>
+<nav>
+  <ul>
+    <li> <a href="about.html">about us</a> </li>
+    <li> <a href="product.html">product</a> </li>
+    <li> <a href="order.html">order</a> </li>
+    <li> <a href="qna.html">qna</a> </li>
+    <li> <a href="faq.html">faq</a> </li>
+    <li> <a href="find.html">find</a> </li>
+    <li> <a href="remove.html">remove account</a> </li>
+  </ul>
+</nav>
+        </section>
+
+        <section>
+          <ul>
+            <li><a href="javascript:void(0)" id="searchBtn"> <img src="images/search-icon.png" alt="search" id="scOpen" ><img src="images/closeBtn.svg" alt="close" id="scClose"></a> </li>
+            <li><a href="login.html">login </a> </li>
+            <li><a href="join.html">join</a> </li>
+            <li><a href="javascript:void(0)" id="cartOpen" class="cartOpen" onclick="openCart()">cart(0)</a> </li>
+
+          </ul>
+        </section>
+
+      </div>
+
+<div class="search_container">
+  <div class="search_inner">
+
+    <h3>무엇을 찾으시나요?</h3>
+
+    <div class="search_input">
+      <input type="text" placeholder="검색어를 입력해주세요.">
+      <img src="images/icon_search.svg" alt="검색">
+    </div>
+
+<div class="searchBox">
+  <div class="sl">
+    <h5>최근 검색어</h5>
+    <div class="sl_text">
+      최근 검색어가 없습니다.
+    </div>
+  </div>
+
+  <div class="sr">
+    <h5>인기 검색어</h5>
+    <ul>
+      <li> <strong>1.</strong>등산화 </li>
+      <li> <strong>2.</strong>백팩 </li>
+      <li> <strong>3.</strong>플리스 </li>
+      <li> <strong>4.</strong>바람막이</li>
+      <li> <strong>5.</strong>패딩</li>
+    </ul>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+
+<div class="cart_popup" id="cart_popup">
+  <div class="cart-bg"></div>
+    <div class="cart-inner">
+    <span><p>장바구니(0)</p><p id="cartClose" onclick="closeCart()">✕</p></span>
+
+    <div class="cart-untill">
+      <label><input type="checkbox"> <span>전체선택</span> </label>
+      <div class="remove-untill">
+        <button>선택삭제</button>
+        <button>품절삭제</button>
+      </div>
+    </div>
+
+    <div class="cart-list">
+      <p>장바구니에 담긴 상품이 없습니다.</p>
+    </div>
+
+<div class="ship-fee">
+  <dl>
+    <dt>상품금액</dt>
+    <dd>0원</dd>
+  </dl>
+
+  <dl>
+    <dt>상품금액</dt>
+    <dd>0원</dd>
+  </dl>
+
+</div>
+
+<div class="cart-btn">
+  <button>총 0개 0원 주문하기</button>
+  <button>장바구니 자세히보기 〉</button>
+</div>
+
+    </div>
+
+</div>
+
+    </div>
+
+  </header>
+
+<script>
+//
+function openCart() {
+  document.getElementById("cartOpen").style.display = "none";
+  document.getElementById("cart_popup").style.width = "100%";
+}
+
+function closeCart() {
+  document.getElementById("cart_popup").style.width = "0%";
+  document.getElementById("cartOpen").style.display = "block";
+}
+
+</script>
+
+
+  <main>
+
+    <div class="swiper main_container">
+      <div class="swiper-wrapper main_wrapper">
+        <div class="swiper-slide main_bg1">
+          <div class="main_copy_box">
+            <div class="main_copy">
+              <small data-aos="fade-up" data-aos-duration="1000">피싱도 캠핑도</small>
+              <h2 data-aos="fade-up" data-aos-duration="1200">여름엔 <br>바하마 셔츠</h2>
+              <p data-aos="fade-up" data-aos-duration="1300">#fishing #camping #outdoor</p>
+              <button data-aos="fade-up" data-aos-duration="1400">detail view</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide main_bg2">
+          <div class="main_copy_box">
+            <div class="main_copy">
+              <small data-aos="fade-up" data-aos-duration="1000">22ss collection</small>
+              <h2 data-aos="fade-up" data-aos-duration="1200">t-shirts<br>& shorts</h2>
+              <p data-aos="fade-up" data-aos-duration="1300">#반팔티셔츠 #반바지</p>
+              <button data-aos="fade-up" data-aos-duration="1400">detail view</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide main_bg3">
+          <div class="main_copy_box">
+            <div class="main_copy">
+              <small data-aos="fade-up" data-aos-duration="1000">나만의 컬럼비아 신발 가이드</small>
+              <h2 data-aos="fade-up" data-aos-duration="1200">shoes for an<br>activity</h2>
+              <p data-aos="fade-up" data-aos-duration="1300">#캠핑 #트레킹 #하이킹</p>
+              <button data-aos="fade-up" data-aos-duration="1400">detail view</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide main_bg4">
+          <div class="main_copy_box">
+            <div class="main_copy">
+              <small data-aos="fade-up" data-aos-duration="1000">made for outside</small>
+              <h2 data-aos="fade-up" data-aos-duration="1200">답답한 일상에서 벗어나<br>색 다른 세상 밖으로</h2>
+              <p data-aos="fade-up" data-aos-duration="1300">더 가벼운 발걸음, 더 편안한 움직임</p>
+              <button data-aos="fade-up" data-aos-duration="1400">detail view</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide main_bg5">
+          <div class="main_copy_box">
+            <div class="main_copy">
+              <small data-aos="fade-up" data-aos-duration="1000">spring & summer 2022</small>
+              <h2 data-aos="fade-up" data-aos-duration="1200">columbia<br>black label</h2>
+              <p data-aos="fade-up" data-aos-duration="1300">섬세한 디테일과 감각적인 핏</p>
+              <button data-aos="fade-up" data-aos-duration="1400">detail view</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide main_bg6">
+          <div class="main_copy_box">
+            <div class="main_copy">
+              <small data-aos="fade-up" data-aos-duration="1000">봄기운 가득한 신상 자켓</small>
+              <h2 data-aos="fade-up" data-aos-duration="1200">new spring<br>new jacket</h2>
+              <p data-aos="fade-up" data-aos-duration="1300">새로운 봄맞이 준비 #방수자켓 #바람막이 #아노락</p>
+              <button data-aos="fade-up" data-aos-duration="1400">detail view</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide main_bg7">
+          <div class="main_copy_box">
+            <div class="main_copy">
+              <small data-aos="fade-up" data-aos-duration="1000">spring essential item</small>
+              <h2 data-aos="fade-up" data-aos-duration="1200">cap & booney<br>collection</h2>
+              <p data-aos="fade-up" data-aos-duration="1300">#cap #bucket #booney #accessory</p>
+              <button data-aos="fade-up" data-aos-duration="1400">detail view</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-button-next">〉</div>
+      <div class="swiper-button-prev">〈</div>
+      <div id="main_pagination" class="swiper-pagination"></div>
+
+
+    </div>
+
+
+  </main>
+
+  <script>
+    var swiper = new Swiper(".main_container", {
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      on: {
+        slideChangeTransitionStart: function() {
+          $('.main_copy').hide(0);
+          $('.main_copy > small').removeClass('aos-init').removeClass('aos-animate');
+          $('.main_copy > h2').removeClass('aos-init').removeClass('aos-animate');
+          $('.main_copy > p').removeClass('aos-init').removeClass('aos-animate');
+          $('.main_copy > button').removeClass('aos-init').removeClass('aos-animate');
+        },
+        slideChangeTransitionEnd: function() {
+          $('.main_copy').show(0);
+          AOS.init();
+        },
+      },
+    });
+  </script>
+
+
+
+  <article class="featured">
+
+    <h2 data-aos="fade-up">Featured Favorites</h2>
+
+    <div data-aos="fade-up" class="Featured_box">
+
+      <section>
+        <a href="#"><img src="images/featured-01.jpg" alt=""></a>
+        <div class="fe_text">
+          <p>fishing</p>
+          <small>ferpormance fishing gear</small>
+        </div>
+      </section>
+
+      <section>
+        <a href="#"> <img src="images/featured-02.jpg" alt=""></a>
+        <div class="fe_text">
+          <p>hiking</p>
+          <small>하이킹, 컬럼비아와 함께 해보세요.</small>
+        </div>
+      </section>
+
+      <section>
+        <a href="#"> <img src="images/featured-03.jpg" alt=""></a>
+        <div class="fe_text">
+          <p>casual & travel</p>
+          <small>여행, 컬럼비아와 함께 해보세요.</small>
+        </div>
+      </section>
+
+    </div>
+
+  </article>
+
+
+
+  <article class="md">
+
+    <div class="md_head">
+      <h2>MD's Pick</h2>
+      <button>more</button>
+    </div>
+
+    <div class="md_box">
+
+      <img src="images/md-01.png" alt="">
+
+      <div class=" md_container">
+        <div class="swiper md_wrapper">
+          <div class="swiper-wrapper ">
+
+            <div class="swiper-slide">
+              <img src="images/md-02.jpg" alt="1">
+              <div class="md_text">
+                <p>CSC 베이직 로고™ 반팔 티셔츠</p>
+                <span>39,000원</span>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <img src="images/md-03.jpg" alt="1">
+              <div class="md_text">
+                <p>클라리온 벤드™ 플리스 자켓</p>
+                <span>89,000원</span>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <img src="images/md-04.jpg" alt="1">
+              <div class="md_text">
+                <p>여성 백보울 크랍 플리스 자켓</p>
+                <span>79,000원</span>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <img src="images/md-05.png" alt="1">
+              <div class="md_text">
+                <p>컬럼비아 롯지™ 프렌치테리 풀집</p>
+                <span>79,000원</span>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <img src="images/md-06.jpg" alt="1">
+              <div class="md_text">
+                <p>뉴스 패스™ 후드</p>
+                <span>109,000원</span>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <img src="images/md-07.jpg" alt="1">
+              <div class="md_text">
+                <p>베이 투 스윕™ 자켓</p>
+                <span>139,000원</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+
+        <div id="md_next" class="swiper-button-next"></div>
+        <div id="md_prev" class="swiper-button-prev"></div>
+
+      </div>
+
+    </div>
+  </article>
+
+  <script>
+    var swiper = new Swiper(".md_wrapper", {
+      slidesPerView: "auto",
+      spaceBetween: 30,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+      navigation: {
+        nextEl: "#md_next",
+        prevEl: "#md_prev",
+      },
+
+    });
+  </script>
+
+
+
+
+  <article class="hiking">
+
+    <div class="hiking_head">
+      <h2>shoes</h2>
+      <button>more</button>
+    </div>
+
+    <div class="hiking_box">
+
+      <img src="images/hiking-01.png" alt="">
+
+      <div class="swiper hiking_container">
+
+        <div class="swiper hi_wrapper">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="hiking_img h_bg1"></div>
+              <div class="hi_text">
+                <p>NEWTON RIDGE™ PLUS II SUEDE WP</p>
+                <span>139,000원</span>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="hiking_img h_bg2"></div>
+              <div class="hi_text">
+                <p>NEWTON RIDGE™ PLUS WATERPROOF AMPED WIDE</p>
+                <span>139,000원</span>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="hiking_img h_bg3"></div>
+              <div class="hi_text">
+                <p>NEWTON RIDGE™ PLUS WATERPROOF AMPED WIDE</p>
+                <span>139,000원</span>
+
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="hiking_img h_bg4">
+              </div>
+              <div class="hi_text">
+                <p>NEWTON RIDGE™ PLUS WATERPROOF AMPED WIDE</p>
+                <span>139,000원</span>
+
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="hiking_img h_bg5">
+              </div>
+              <div class="hi_text">
+                <p>FACET™ 45 OUTDRY™</p>
+                <span>229,000원</span>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+        <div id="hi_next" class="swiper-button-next"></div>
+        <div id="hi_prev" class="swiper-button-prev"></div>
+
+      </div>
+
+    </div>
+  </article>
+
+  <script>
+    var swiper = new Swiper(".hi_wrapper", {
+      slidesPerView: "auto",
+      spaceBetween: 30,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+      navigation: {
+        nextEl: "#hi_next",
+        prevEl: "#hi_prev",
+      },
+
+    });
+  </script>
+
+
+
+
+
+  <article class="video_con">
+    <div class="video_container">
+
+
+      <div class="swiper videoswiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/video-01.webp" alt="1">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/video-02.webp" alt="2">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/video-03.jpg" alt="3">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/video-04.webp" alt="4">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/video-05.jpg" alt="5">
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="images/video-06.jpg"
+              alt="6">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/video-07.webp" alt="7">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/video-08.webp" alt="8">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="video_text">
+        <h2>made for outside</h2>
+        <p>답답한 일상에서 벗어나, 색다른 세상 밖으로</p>
+        <button>shop</button>
+      </div>
+
+
+      <div class="video_box">
+        <video src="images/video.mp4" autoplay="" muted loop></video>
+      </div>
+    </div>
+  </article>
+
+
+  <script>
+    var swiper = new Swiper(".videoswiper", {
+      slidesPerView: "auto",
+      spaceBetween: 0,
+      loop: true,
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+      },
+    });
+  </script>
+
+
+
+  <article class="store">
+
+    <div class="store_wrap">
+
+      <div class="store_head">
+        <h2>store</h2>
+        <button>more</button>
+      </div>
+
+      <div class="swiper store_container">
+        <div class="swiper-wrapper store_wrappper">
+          <div class="swiper-slide">
+            <a href="#"><img src="images/store-01.jpg" alt=""></a>
+
+            <div class="st_text">
+              <h4>롯데백화점 미아점</h4>
+              <p>서울 성북구 동소문로 315 현대백화점 미아점 5층</p>
+              <span>0507-1330-1584</span>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="#"><img src="images/store-02.jpg" alt=""></a>
+
+            <div class="st_text">
+              <h4>롯데백화점 본점</h4>
+              <p>서울 중구 을지로 30</p>
+              <span>02-772-3701</span>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="#"><img src="images/store-03.jpg" alt=""></a>
+
+            <div class="st_text">
+              <h4>현대시티아울렛 동대문점</h4>
+              <p>서울 중구 장충단로13길 20 현대시티아울렛 7층</p>
+              <span>02-2283-2721</span>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="#"> <img src="images/store-04.jpg" alt=""></a>
+
+            <div class="st_text">
+              <h4>신세계백화점 타임스퀘어점</h4>
+              <p>서울 영등포구 영중로 9</p>
+              <span>02-2639-1983</span>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="#"><img src="images/store-05.jpg" alt=""></a>
+
+            <div class="st_text">
+              <h4>신세계백화점 센텀시티몰점</h4>
+              <p>부산 해운대구 센텀4로 15 신세계센텀시티몰점 2층</p>
+              <span>051-745-2589</span>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="#"> <img src="images/store-06.jpg" alt=""></a>
+
+            <div class="st_text">
+              <h4>롯데아울렛 부여점</h4>
+              <p>충남 부여군 규암면 합정리 616</p>
+              <span>041-435-2674</span>
+            </div>
+
+          </div>
+        </div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <script>
+    var swiper = new Swiper(".store_container", {
+      slidesPerView: "auto",
+      spaceBetween: 30,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+    });
+  </script>
+
+
+
+
+  <article class="shop">
+
+    <div class="shop_wrap">
+
+      <h2 data-aos="fade-up" data-aos-duration="1000">shop</h2>
+
+      <div data-aos="fade-up" data-aos-duration="1200">
+        <section>
+          <img src="images/shop-01.jpg" alt="women">
+          <button>women</button>
+        </section>
+
+        <section>
+          <img src="images/shop-02.jpg" alt="men">
+          <button>men</button>
+        </section>
+
+        <section>
+          <img src="images/shop-03.png" alt="shoes">
+          <button>shoes</button>
+        </section>
+      </div>
+
+
+    </div>
+
+  </article>
+
+
+  <article class="mainBanner">
+<div class="bannerimg"></div>
+      <div class="bannertext">
+        <h2 data-aos="fade-up">“it's perfect, now make it better.”</h2>
+        <p data-aos="fade-up" data-aos-delay="250">컬럼비아 수장 거트보일의 브랜드 철학입니다. <br>
+        이렇게 탄생한 거트보일의 최종 승인 <strong>'teted tough'</strong>스탬프를 발견한다면 당신은 좀 더 오랫동안 즐겁게 아웃도어를 즐길 수 있는 만반의 준비가 된 것 입니다.</p>
+        <button data-aos="fade-up" data-aos-delay="350" >more view 〉</button>
+      </div>
+  </article>
+
+
+
+  <article class="event">
+
+    <div class="event_wrap">
+
+      <h2>event</h2>
+
+      <div class="event_box">
+
+        <div class="e_left">
+          <ul>
+            <li> <a href="#"> <img src="images/event-01.png" alt="">
+                <div class="e_text">
+                  <small>기획전</small>
+                  <h3>피싱도 캠핑도 <br>여름엔 바하마셔츠 </h3>
+                  <p>#fishing #camping #outdoor</p>
+                </div>
+              </a>
+            </li>
+            <li> <a href="#"> <img src="images/event-02.png" alt="">
+                <div class="e_text">
+                  <small>기획전</small>
+                  <h3>shoes for an<br>activity</h3>
+                  <p>나만의 등산화 가이드 <br> #트레킹 #하이킹 #캠핑 </p>
+                </div>
+              </a>
+            </li>
+            <li> <a href="#">
+                <img src="images/event-03.png" alt="">
+                <div class="e_text">
+                  <small>기획전</small>
+                  <h3>spring/summer <br> outlet</h3>
+                  <p>봄, 여름 상품을 특별한 가격에 <br>
+                    get 할 수 있는 찬스! </p>
+                </div>
+              </a> </li>
+
+            <li> <a href="#">
+                <img src="images/event-04.png" alt="">
+                <div class="e_text">
+                  <small>기획전</small>
+                  <h3>find the backpack</h3>
+                  <p>새로운 백팩 여행의 시작</p>
+                </div>
+              </a> </li>
+
+            <li> <a href="#">
+                <img src="images/event-05.png" alt="">
+                <div class="e_text">
+                  <small>기획전</small>
+                  <h3>22ss new <br> arrival </h3>
+                  <p>미리 만나보는 22ss 봄 신상 컬렉션</p>
+                </div>
+              </a> </li>
+            <li> <a href="#">
+                <img src="images/event-06.png" alt="">
+                <div class="e_text">
+                  <small>기획전</small>
+                  <h3>cap & booney<br>collection</h3>
+                  <p>spring essential item</p>
+                </div>
+              </a> </li>
+            <li> <a href="#">
+                <img src="images/event-07.png" alt="">
+                <div class="e_text">
+                  <small>기획전</small>
+                  <h3>new spring<br>new jacket</h3>
+                  <p>봄기운 가득한 신상 자켓으로 봄맞이 준비</p>
+                </div>
+              </a> </li>
+            <li> <a href="#">
+                <img src="images/event-08.png" alt="">
+                <div class="e_text">
+                  <small>기획전</small>
+                  <h3>아웃드라이 자켓 & 슈즈</h3>
+                  <p>비오는 날이 기다려지는 <br> 아웃드라이 자켓 & 슈즈 </p>
+                </div>
+
+              </a> </li>
+          </ul>
+        </div>
+
+        <div class="e_right">
+          <p>columbia event</p>
+          <button>more</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <footer>
+    <div class="fo_top">
+      <ul>
+        <li> <a href="#">개인정보처리방침</a> </li>
+        <li> <a href="#">이용약관</a> </li>
+        <li> <a href="#">about columbia store</a> </li>
+        <li> <a href="#">store</a> </li>
+      </ul>
+
+      <ul>
+        <li> <a href="#"> <img src="https://www.kappa.co.kr/web/images/ico_sns_insta_b.svg" alt=""> </a> </li>
+        <li> <a href="#">
+            <img src="https://www.kappa.co.kr/web/images/ico_sns_kakaoch_b.svg" alt=""> </a> </li>
+        <li> <a href="#">
+            <img src="https://www.kappa.co.kr/web/images/ico_sns_facebook.svg" alt=""> </a> </li>
+      </ul>
+    </div>
+
+    <div class="fo_bottom">
+
+      <div class="f_left">
+        <div>
+          <strong>회사소개 +</strong>
+          <p> 컬럼비아스포츠웨어코리아 대표이사 : 배정원 <br>
+            서울특별시 동대문구 천호대로 429, 7~10층 <br>
+            사업자등록번호 : 120-81-63458 <br>
+            통신판매신고번호 : 2013-서울동대문-0848 <br>
+            개인정보 보호책임자 : 전기석 </p>
+        </div>
+
+        <div>
+          <strong>고객센터 +</strong>
+
+          <div>
+            <p>컬럼비아 대표번호 <span>매장고객 및 AS문의</span> </p>
+            <h4>080-540-0277</h4>
+            <small>평일 09:30~17:30</small>
+          </div>
+
+          <div>
+            <p>온라인 스토어 고객센터 <span>온라인몰 고객 문의</span> </p>
+            <h4>1800-1784</h4>
+            <small>평일 10:00~17:00</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      <button>International Site</button>
+    </div>
+  </footer>
+
+  <div id="top_btn">
+  <div>
+    top
+  </div>
+</div>
+
+
+  <script>
+  // top으로 이동
+  $(window).scroll(function() {
+
+    if ($(this).scrollTop() > 100) {
+      $("#top_btn").addClass("on");
+    } else {
+      $("#top_btn").removeClass("on");
+    }
+
+  });
+
+  $("#top_btn").click(function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+
+
+    AOS.init({
+      offset: 200,
+      duration: 800,
+      easing: 'linear',
+      delay: 10,
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0">
+  <title>columbia</title>
+  <!-- css -->
+  <link rel="stylesheet" href="css\join.css?ver=1">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style type="text/css"></style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="script.js"></script>
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+  <!-- aos -->
+  <link rel="js/stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!--  -->
+
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+  <!-- scrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollTrigger.min.js"></script>
+  <!-- scrollTo -->
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollToPlugin.min.js"></script>
+</head>
+
+<body>
+
+
+  <header>
+
+    <div class="banner">
+      <ul id="rolling">
+        <li> <a href="javascript:void(0)">평생회원되고 point받자! <span>2,000p</span> </a> </li>
+        <li> <a href="javascript:void(0)">spring / summer outlet</a> </li>
+        <li> <a href="javascript:void(0)">
+            20ss new 등산화 <span>newton ridge</span> new 컬러입고!
+          </a> </li>
+      </ul>
+    </div>
+
+    <div class="header_wrap" id="topHeader">
+      <div class="header_wrapper">
+
+          <div class="logo">
+            <a href="index.html"> <img src="images/sub-logo.png" alt="logo"></a>
+          </div>
+
+    <section>
+<nav>
+  <ul>
+    <li> <a href="about.html">about us</a> </li>
+    <li> <a href="product.html">product</a> </li>
+    <li> <a href="order.html">order</a> </li>
+    <li> <a href="qna.html">qna</a> </li>
+    <li> <a href="faq.html">faq</a> </li>
+    <li> <a href="find.html">find</a> </li>
+    <li> <a href="remove.html">remove account</a> </li>
+  </ul>
+</nav>
+        </section>
+
+        <section>
+          <ul>
+            <li><a href="javascript:void(0)" id="searchBtn"> <img src="images/sub-search.svg" alt="search" id="scOpen"><img src="images/sub-closeBtn.svg" alt="close" id="scClose"> </a> </li>
+            <li><a href="login.html">login </a> </li>
+            <li><a href="join.html">join</a> </li>
+            <li><a href="javascript:void(0)" id="cartOpen" class="cartOpen" onclick="openCart()">cart(0)</a> </li>
+
+          </ul>
+        </section>
+
+      </div>
+
+      <div class="search_container">
+        <div class="search_inner">
+
+          <h3>무엇을 찾으시나요?</h3>
+
+          <div class="search_input">
+            <input type="text" placeholder="검색어를 입력해주세요.">
+            <img src="images/icon_search.svg" alt="검색">
+          </div>
+
+      <div class="searchBox">
+        <div class="sl">
+          <h5>최근 검색어</h5>
+          <div class="sl_text">
+            최근 검색어가 없습니다.
+          </div>
+        </div>
+
+        <div class="sr">
+          <h5>인기 검색어</h5>
+          <ul>
+            <li> <strong>1.</strong>등산화 </li>
+            <li> <strong>2.</strong>백팩 </li>
+            <li> <strong>3.</strong>플리스 </li>
+            <li> <strong>4.</strong>바람막이</li>
+            <li> <strong>5.</strong>패딩</li>
+          </ul>
+        </div>
+      </div>
+
+        </div>
+      </div>
+
+<div class="cart_popup" id="cart_popup">
+  <div class="cart-bg"></div>
+    <div class="cart-inner">
+    <span><p>장바구니(0)</p><p id="cartClose" onclick="closeCart()">✕</p></span>
+
+    <div class="cart-untill">
+      <label><input type="checkbox"> <span>전체선택</span> </label>
+      <div class="remove-untill">
+        <button>선택삭제</button>
+        <button>품절삭제</button>
+      </div>
+    </div>
+
+    <div class="cart-list">
+      <p>장바구니에 담긴 상품이 없습니다.</p>
+    </div>
+
+<div class="ship-fee">
+  <dl>
+    <dt>상품금액</dt>
+    <dd>0원</dd>
+  </dl>
+
+  <dl>
+    <dt>상품금액</dt>
+    <dd>0원</dd>
+  </dl>
+
+</div>
+
+<div class="cart-btn">
+  <button>총 0개 0원 주문하기</button>
+  <button>장바구니 자세히보기 〉</button>
+</div>
+
+    </div>
+
+</div>
+
+    </div>
+
+  </header>
+
+  <script>
+  // 스크롤 header 고정
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("topHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+if (window.pageYOffset > sticky) {
+header.classList.add("sticky");
+} else {
+header.classList.remove("sticky");
+}
+}
+
+//popup
+function openCart() {
+  document.getElementById("cartOpen").style.display = "none";
+  document.getElementById("cart_popup").style.width = "100%";
+}
+
+function closeCart() {
+  document.getElementById("cart_popup").style.width = "0%";
+  document.getElementById("cartOpen").style.display = "block";
+}
+
+  </script>
+
+
+<article class="join-1">
+  <div class="join-1_inner">
+    <h2>회원가입</h2>
+    <strong>columbia 회원가입</strong>
+    <p>columbia 회원으로 가입합니다.</p>
+    <button>columbia 회원가입</button>
+
+<div class="join-1_simple">
+  <strong>간편 회원가입</strong>
+  <p>사용중인 sns계정으로 간편하게 가입 하실 수 있습니다.</p>
+
+<div class="btnBox">
+  <button class="wrap"> <img src="images/login_naver_btn.svg" alt="naver" class="chatbox"> </button>
+  <button class="wrap"> <img src="images/login_kakao_btn.svg" alt="naver" class="chatbox"> </button>
+  <button class="wrap"> <img src="images/login_apple_btn.svg" alt="naver" class="chatbox"> </button>
+</div>
+</div>
+
+<strong>columbia 회원혜택</strong>
+<p>columbia 회원으로 신규가입시 가입축하 쿠폰을 지급합니다. <br>
+가입축하 2000포인트 지급합니다. </p>
+
+</div>
+
+  </div>
+</article>
+
+
+
+<article class="join">
+  <div class="join_inner">
+<h2>회원정보 입력</h2>
+
+<section class="requirement">
+  <h3>필수정보</h3>
+
+<p class="input_title">이름</p>
+<input type="text" placeholder="이름">
+<p class="input_title">휴대폰 번호</p>
+<input type="text" placeholder="'-'없이 숫자만 입력">
+<button>본인인증하기</button>
+<p class="input_title">아이디(이메일)</p>
+<div class="id_box">
+  <input type="text" placeholder="아이디로 사용할 이메일을 입력해주세요"><button>중복확인</button>
+</div>
+<p class="input_title">비밀번호</p>
+<input type="password" placeholder="8~15자리의 영문,숫자,특수문자를 함께 입력해주세요">
+<p class="input_title">비밀번호 확인</p>
+<input type="password" placeholder="비밀번호 확인">
+</section>
+
+<section class="clauseall">
+  <h3><p>약관동의</p> <label for="check-all"><input type="checkbox" name="all" id="check-all">전체 선택</label> </h3>
+  <ul>
+    <li> <label><input type="checkbox" name="cb1" class="ab">  [필수]서비스 이용약관</label> <p>더보기＞ </p>  </li>
+    <li><label> <input type="checkbox" name="cb2" class="ab"> [필수]개인정보 수집·이용 동의서</label><p>더보기＞</p></li>
+  </ul>
+  <h3>선택정보</h3>
+  <p>선택정보를 등록하시면 columbia에서 진행하는 다양한 이벤트와 <br>프로모션 정보를 받을 수 있으며 보다 편리한 쇼핑을 즐길 수 있습니다. </p>
+<label> <p> <input type="checkbox" id="birth_check" onclick="toggleTextbox(this)"/> [선택] 개인정보 수집 및 이용 동의</p> <span>더보기＞</span> </label>
+
+<h3>성별</h3>
+<div class="xyBox">
+  <input type="radio" name="xy" id="xy1"><label for="xy1">여성</label>
+  <input type="radio" name="xy" id="xy2"><label for="xy2">남성</label>
+</div>
+
+<h3>생년월일</h3>
+<p>생년월일을 등록하시면 생일자 프로모션 등의 혜택을 받을 수 있습니다.</p>
+<div class="selectBox">
+  <select class="year">
+    <option selected="selected" hidden="hidden" id="birth_select" disabled/>년도</option>
+    <option>2022</option>
+    <option>2021</option>
+    <option>2020</option>
+    <option>2019</option>
+    <option>2018</option>
+    <option>2017</option>
+    <option>1994</option>
+    <option>1993</option>
+    <option>1992</option>
+    <option>1991</option>
+    <option>1990</option>
+  </select>
+  <select class="mon">
+    <option selected="selected" hidden="hidden" id="birth_select" disabled/>월</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+  </select>
+  <select class="day">
+    <option selected="selected" hidden="hidden" id="birth_select" disabled/>월</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+    <option>13</option>
+    <option>14</option>
+    <option>15</option>
+    <option>16</option>
+    <option>17</option>
+    <option>18</option>
+    <option>19</option>
+    <option>20</option>
+    <option>21</option>
+    <option>22</option>
+    <option>23</option>
+    <option>24</option>
+    <option>25</option>
+    <option>26</option>
+    <option>27</option>
+    <option>28</option>
+    <option>29</option>
+    <option>30</option>
+    <option>31</option>
+  </select>
+</div>
+
+</section>
+
+<section class="marketing">
+  <label for="check-all"><p><input type="checkbox" name="cb3" class="ab">
+   [선택] 마케팅 정보 수신 동의</p> <span>더보기＞</span> </label>
+<div>
+  <label><input type="checkbox" name="cb4" class="ab">문자(sms)/알람톡 수신</label>
+    <label><input type="checkbox" name="cb5" class="ab">이메일 수신</label>
+</div>
+
+<ul>
+  <li>중요 안내사항 및 주문/배송에 대한 정보는 위 수신여부와 관계없이 발송됩니다. <br>(아이디로 입력하신 이메일주소로 발송됩니다.) </li>
+    <li>광고성 정보 수신에 하나라도 동의 하실 경우 마케팅 정보 수신동의에 체크됩니다.</li>
+</ul>
+<label for="check-all"><input type="checkbox" name="all" id="check-all"> 모두동의하기</label>
+</section>
+
+<div class="textBox">
+  <p>롯데지에프알 온라인 사이트 이용약관, 개인정보 수집/이용동의, <br>
+        통합회원 이용약관 내용을 확인 하였으며 위 내용에 동의합니다. </p>
+  <p>단, 14세 미만 아동은 회원가입이 제한됩니다.</p>
+
+  <button>가입하기</button>
+</div>
+
+  </div>
+</article>
+
+
+
+<article class="joinFinal">
+  <div class="final_inner">
+    <h2>가입완료</h2>
+    <img src="images/joinfinal.svg" alt="final">
+    <h3>회원가입이 완료되었습니다.</h3>
+    <p> <strong>김태리</strong>님의 회원가입을 축하합니다. </p>
+    <p>columbia의 다양한 멤버쉽 혜택을 만나보세요.</p>
+    <button>로그인 페이지로 이동</button>
+  </div>
+</article>
+
+<script>
+// check-all
+$( document ).ready( function() {
+  $( '#check-all' ).click( function() {
+    $( '.ab' ).prop( 'checked', this.checked );
+  } );
+} );
+
+// 비활성화
+
+function toggleTextbox(checkbox) {
+
+  // 1. 텍스트 박스 element 찾기
+  const textbox_elem = document.getElementById('birth_select');
+
+  // 2-1. 체크박스 선택여부 체크
+  // 2-2. 체크박스 선택여부에 따라 텍스트박스 활성화/비활성화
+  textbox_elem.disabled = checkbox.checked ? false : true;
+
+  // 3. 텍스트박스 활성화/비활성화 여부에 따라
+  // - 텍스트박스가 비활성화 된 경우 : 텍스트박스 초기화
+  // - 텍스트박스가 활성화 된 경우 : 포커스 이동
+  if(textbox_elem.disabled) {
+    textbox_elem.value = null;
+  }else {
+    textbox_elem.focus();
+  }
+}
+
+
+</script>
+
+
+    <footer>
+      <div class="fo_top">
+        <ul>
+          <li> <a href="#">개인정보처리방침</a> </li>
+          <li> <a href="#">이용약관</a> </li>
+          <li> <a href="#">about columbia store</a> </li>
+          <li> <a href="#">store</a> </li>
+        </ul>
+
+        <ul>
+          <li> <a href="#"> <img src="https://www.kappa.co.kr/web/images/ico_sns_insta_b.svg" alt=""> </a> </li>
+          <li> <a href="#">
+              <img src="https://www.kappa.co.kr/web/images/ico_sns_kakaoch_b.svg" alt=""> </a> </li>
+          <li> <a href="#">
+              <img src="https://www.kappa.co.kr/web/images/ico_sns_facebook.svg" alt=""> </a> </li>
+        </ul>
+      </div>
+
+      <div class="fo_bottom">
+
+        <div class="f_left">
+          <div>
+            <strong>회사소개 +</strong>
+            <p> 컬럼비아스포츠웨어코리아 대표이사 : 배정원 <br>
+              서울특별시 동대문구 천호대로 429, 7~10층 <br>
+              사업자등록번호 : 120-81-63458 <br>
+              통신판매신고번호 : 2013-서울동대문-0848 <br>
+              개인정보 보호책임자 : 전기석 </p>
+          </div>
+
+          <div>
+            <strong>고객센터 +</strong>
+
+            <div>
+              <p>컬럼비아 대표번호 <span>매장고객 및 AS문의</span> </p>
+              <h4>080-540-0277</h4>
+              <small>평일 09:30~17:30</small>
+            </div>
+
+            <div>
+              <p>온라인 스토어 고객센터 <span>온라인몰 고객 문의</span> </p>
+              <h4>1800-1784</h4>
+              <small>평일 10:00~17:00</small>
+            </div>
+
+          </div>
+
+        </div>
+
+        <button>International Site</button>
+      </div>
+    </footer>
+
+    <div id="top_btn">
+    <div>
+      top
+    </div>
+  </div>
+
+
+    <script>
+
+
+
+
+    // top으로 이동
+    $(window).scroll(function() {
+
+      if ($(this).scrollTop() > 100) {
+        $("#top_btn").addClass("on");
+      } else {
+        $("#top_btn").removeClass("on");
+      }
+
+    });
+
+    $("#top_btn").click(function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+
+
+      AOS.init({
+        offset: 200,
+        duration: 800,
+        easing: 'linear',
+        delay: 10,
+      });
+    </script>
+
+  </body>
+
+  </html>
